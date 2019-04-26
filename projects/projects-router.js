@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../data/helpers/projectModel.js');
+const projDb = require('../data/helpers/projectModel.js');
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ function checkRequired(req, res, next) {
 
 router.post('/', checkRequired, async (req, res) => {
   try {
-    const newProject = await db.insert(req.body);
+    const newProject = await projDb.insert(req.body);
     res.status(201).json(newProject);
   } catch (error) {
     res.status(500).json({
@@ -33,7 +33,7 @@ router.post('/', checkRequired, async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const projects = await db.get();
+    const projects = await projDb.get();
     res.status(200).json(projects);
   } catch (error) {
     res
@@ -44,7 +44,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const project = await db.get(req.params.id);
+    const project = await projDb.get(req.params.id);
     if (project) {
       res.status(200).json(project);
     } else {
@@ -63,7 +63,7 @@ router.get('/:id', async (req, res) => {
 
 router.put('/:id', checkRequired, async (req, res) => {
   try {
-    const editedProject = await db.update(req.params.id, req.body);
+    const editedProject = await projDb.update(req.params.id, req.body);
     if (editedProject) {
       res.status(201).json(editedProject);
     } else {
@@ -82,7 +82,7 @@ router.put('/:id', checkRequired, async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const deletedPost = await db.remove(req.params.id);
+    const deletedPost = await projDb.remove(req.params.id);
     if (deletedPost) {
       res.status(204).end();
     } else {
