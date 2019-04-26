@@ -26,13 +26,27 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+I learn that express is used to create a server. And in that server we create routes handles functions that interact with the database through database calls.
+
 - [ ] Describe Middleware?
+
+Middleware is a function that will extend the express functionalities. A middleware takes up to 4 parmeters: the 3 most common are req, res, and next. The last parameter is the err and is there to handle any request error before the req is sent to the next piece of middleware. There are 3 types of middlewares: Built-in middleware, third party middleware, and custom middleware.
+
+**Built-in Middlewares**: Are provided with express but must be required in the application to run.
+**Third party Middlewares**: Are packages built by experience developers or companies that are provided online, they must be added as dependencies and required in the application to be able to run.
+**Custom Middlewares**: Are middlewares that we make ourselves when we don't find the appropriate middleware to achieve what we want.
 
 - [ ] Describe a Resource?
 
+A ressource is a table in the database. For example in a database that has business and clients tables, business is a ressource and clients is another ressource.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+The API should return a status code of 200 with the data requested. Also it can return a message (ie: for a delete request) to let the client know that the data was successfuly removed.
+
 - [ ] How can we partition our application into sub-applications?
+
+By using the separation of concerns in our application. Each time we want to partition our application we will use module.exports to export something and require to import something.
 
 ## Project Setup
 
