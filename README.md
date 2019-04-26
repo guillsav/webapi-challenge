@@ -26,7 +26,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
-I learn that express is used to create a server. And in that server we create routes handles functions that interact with the database through database calls.
+I learn that express is used to create a server. And in that server we create routes handles functions that interact with the database through database calls. I also learn that express uses environment variables.
 
 - [ ] Describe Middleware?
 
