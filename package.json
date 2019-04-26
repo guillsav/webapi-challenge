@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Web API Challenge",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LambdaSchool/Sprint-Challenge-Node-Express.git"
@@ -24,6 +27,7 @@
     "sqlite3": "^4.0.6"
   },
   "devDependencies": {
-    "knex-cleaner": "^1.1.4"
+    "knex-cleaner": "^1.1.4",
+    "nodemon": "^1.18.11"
   }
 }
